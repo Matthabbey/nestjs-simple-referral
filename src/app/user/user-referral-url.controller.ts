@@ -21,6 +21,7 @@ export class UserReferralUrlController {
   @ApiOperation({ description: 'Get user referral url' })
   public async referralUrl(@Req() req: Request) {
     const referralToken = await this.userService.getReferralToken(req.user.id)
+    console.log(referralToken)
     const referralUrl = `/sign-up?referralToke=${referralToken}`
 
     return { referralToken, referralUrl }

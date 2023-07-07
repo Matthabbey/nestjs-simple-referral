@@ -19,7 +19,7 @@ export class UserService {
   }
 
   getReferralToken(id: number): string {
-    const token = Buffer.from(id.toString()).toString('base64')
+    const token = Buffer.from(id.toString()).toString()
 
     return token
   }
